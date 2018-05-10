@@ -1,7 +1,7 @@
 FROM php:7
 
 # Run some Debian packages installation.
-RUN apt-get update -y && apt-get install -y build-essential openssl zip unzip git gnupg \
+RUN apt-get update -y && apt-get install -y build-essential php7.0-sqlite openssl zip unzip git gnupg \
     libgtk2.0-0 \
     libnotify-dev \
     libgconf-2-4 \
