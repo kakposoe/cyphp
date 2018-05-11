@@ -1,16 +1,27 @@
 FROM php:7
 
 # Run some Debian packages installation.
-RUN apt-get update -y && apt-get install -y build-essential php7.0-sqlite openssl zip unzip git gnupg \
+RUN apt-get update -y && apt-get install -y build-essential \
+    php7.0-sqlite \
+    docker-php-ext-install \
+    pdo \
+    pdo_dblib \
+    pdo_mysql \
+    openssl \ 
+    zip \
+    unzip \
+    git \
+    gnupg \
     libgtk2.0-0 \
     libnotify-dev \
     libgconf-2-4 \
     libnss3 \
     libxss1 \
     libasound2 \
-    xvfb
+    xvfb \
+    mbstring
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN docker-php-ext-install pdo mbstring
 
 # Run xdebug installation. 
 RUN pecl install xdebug \
