@@ -2,7 +2,7 @@ FROM php:7
 
 # Run some Debian packages installation.
 RUN apt-get update -y && apt-get install -y build-essential \
-    php7.0-sqlite \
+    php7.0-sqlite3 \
     openssl \
     zip \
     unzip \
